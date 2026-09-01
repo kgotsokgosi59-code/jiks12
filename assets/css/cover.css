@@ -1,0 +1,166 @@
+/* ==========================================================================
+   cover.css — the cover / splash page (index.html) and nothing else.
+
+   Linked from index.html only, so the other 14 pages never download it.
+
+   Nothing here is a fixed pixel size: it is all vmin / vw / vh inside clamp(),
+   so the cover fills the screen on a phone, an iPad and a laptop instead of
+   sitting small in the middle.
+
+   Three multipliers scale the whole composition without touching each rule:
+     --cov    landscape  (laptop, iPad sideways)
+     --cov-p  portrait   (phone, iPad upright)
+     --cov-g  landscape phones (short screens: side-by-side layout)
+
+   The values baked in are the largest that give zero overflow in Chromium,
+   Firefox and WebKit across 15 viewports from 360x640 to 1920x1080 — re-check
+   with:  python3 cover_fit.py
+
+   Two measured facts drive the numbers: the wordmark "JIKS ACADEMY" is
+   5.23x the font-size wide, and the longest word "ACADEMY" is 3.45x.
+   ========================================================================== */
+
+.cover{
+  --cov:1;    /* landscape                 */
+  --cov-p:1;  /* portrait                  */
+  --cov-g:1;  /* landscape phones          */
+
+  position:relative;min-height:100vh;min-height:100svh;
+  display:flex;align-items:center;justify-content:center;
+  padding:clamp(18px,4vmin,64px) var(--pad);text-align:center;overflow:hidden;
+}
+.cover-bg{position:absolute;inset:0;z-index:-2}
+.cover-bg > img{width:100%;height:100%;object-fit:cover}
+.cover-scrim{
+  position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(70% 60% at 50% 45%, rgba(47,91,255,.30), transparent 70%),
+    linear-gradient(180deg,rgba(4,6,14,.90),rgba(4,6,14,.80) 45%,var(--ink) 100%);
+}
+.cover-inner{
+  width:100%;max-width:min(1180px,94vw);
+  display:flex;flex-direction:column;align-items:center;
+  gap:var(--c-gap,clamp(2px,calc(.6vmin * var(--cov)),8px));
+}
+
+/* ---------- the logo on its light plate ---------- */
+.cover-plate{
+  display:flex;align-items:center;justify-content:center;
+  background:#f2f5fc;border-radius:6px;
+  width:clamp(132px, calc(min(28vmin, 25vh) * var(--cov)), 460px);
+  aspect-ratio:1/1;
+  padding:clamp(12px,calc(2.6vmin * var(--cov)),32px);
+  margin-bottom:var(--c-plate,clamp(12px,calc(3vmin * var(--cov)),44px));
+  box-shadow:0 22px 60px rgba(0,0,0,.55);
+  animation:coverIn 1s var(--ease) both;
+}
+.cover-plate img{width:100%;height:100%;object-fit:contain}
+
+/* ---------- wordmark ---------- */
+.cover h1{
+  font-family:var(--display);text-transform:uppercase;margin:0;
+  font-size:clamp(46px, calc(min(15vw, 24vh) * var(--cov)), 300px);
+  line-height:.86;letter-spacing:-.015em;
+  animation:coverIn 1s .12s var(--ease) both;
+}
+.cover-tag{
+  font-family:var(--mono);
+  font-size:clamp(11px, calc(min(2.2vw, 2.6vh) * var(--cov)), 28px);
+  letter-spacing:.28em;text-transform:uppercase;color:var(--cyan);
+  margin:var(--c-tag-t,clamp(12px,calc(2.4vmin * var(--cov)),28px))
+         0
+         var(--c-tag-b,clamp(18px,calc(3.4vmin * var(--cov)),42px));
+  animation:coverIn 1s .2s var(--ease) both;
+}
+.cover .cover-enter{
+  font-size:clamp(14px, calc(min(2vw, 2.4vh) * var(--cov)), 26px);
+  padding:clamp(14px,calc(1.9vmin * var(--cov)),23px) clamp(26px,calc(3.6vmin * var(--cov)),54px);
+  animation:coverIn 1s .3s var(--ease) both;
+}
+.cover-bar{
+  width:min(440px,74vw);height:3px;background:rgba(150,180,255,.22);
+  margin-top:var(--c-bar,clamp(18px,calc(3.2vmin * var(--cov)),40px));overflow:hidden;
+  animation:coverIn 1s .34s var(--ease) both;
+}
+.cover-bar span{display:block;height:100%;background:var(--cyan);transform:scaleX(0);transform-origin:left}
+.cover-note{
+  margin-top:var(--c-note,clamp(11px,calc(1.8vmin * var(--cov)),22px));
+  font-size:clamp(11px, calc(min(1.7vw, 1.9vh) * var(--cov)), 18px);
+  letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim);
+  animation:coverIn 1s .38s var(--ease) both;
+}
+.cover-meta{
+  margin-top:var(--c-meta,clamp(8px,calc(1.4vmin * var(--cov)),16px));font-family:var(--mono);
+  font-size:clamp(10px, calc(min(1.5vw, 1.7vh) * var(--cov)), 16px);
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(152,168,204,.75);animation:coverIn 1s .42s var(--ease) both;
+}
+@keyframes coverIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* ---------- portrait: two lines, taller spacing ---------- */
+@media (max-aspect-ratio:1/1){
+  .cover{
+    --c-gap:clamp(4px,calc(1.1vh * var(--cov-p)),14px);
+    --c-plate:clamp(16px,calc(3.6vh * var(--cov-p)),56px);
+    --c-tag-t:clamp(16px,calc(3vh * var(--cov-p)),40px);
+    --c-tag-b:clamp(22px,calc(4.4vh * var(--cov-p)),58px);
+    --c-bar:clamp(18px,calc(4vh * var(--cov-p)),54px);
+    --c-note:clamp(12px,calc(2.2vh * var(--cov-p)),30px);
+    --c-meta:clamp(9px,calc(1.7vh * var(--cov-p)),24px);
+  }
+  .cover h1{
+    font-size:clamp(46px, calc(min(20.5vw, 26vh) * var(--cov-p)), 280px);
+    line-height:.84;
+  }
+  .cover-plate{width:clamp(132px, calc(min(30vmin, 26vh) * var(--cov-p)), 460px)}
+  .cover-tag{font-size:clamp(12px, calc(min(4vw, 2.2vh) * var(--cov-p)), 26px)}
+  .cover .cover-enter{
+    font-size:clamp(15px, calc(min(4.2vw, 2.4vh) * var(--cov-p)), 26px);
+    padding:clamp(15px,calc(2.4vmin * var(--cov-p)),24px) clamp(28px,calc(7vw * var(--cov-p)),56px);
+  }
+  .cover-bar{width:min(440px,80vw)}
+  .cover-note{font-size:clamp(12px, calc(min(3.4vw, 1.9vh) * var(--cov-p)), 20px)}
+  .cover-meta{font-size:clamp(11px, calc(min(3vw, 1.7vh) * var(--cov-p)), 17px)}
+}
+
+/* ---------- landscape phones: side by side, so it fits a short screen ---------- */
+@media (max-height:620px) and (orientation:landscape){
+  .cover-inner{
+    display:grid;grid-template-columns:auto 1fr;align-content:center;
+    column-gap:clamp(18px,3vw,52px);text-align:left;max-width:none;
+  }
+  .cover-plate{
+    grid-area:1/1/7/2;align-self:center;
+    width:clamp(86px,calc(17vh * var(--cov-g)),164px);
+    margin-bottom:0;padding:clamp(8px,calc(1.4vh * var(--cov-g)),18px);
+  }
+  .cover h1{
+    grid-area:1/2/2/3;
+    font-size:clamp(34px, calc(13.5vh * var(--cov-g)), 110px);
+  }
+  .cover-tag{
+    grid-area:2/2/3/3;
+    margin:clamp(6px,calc(1.2vh * var(--cov-g)),14px) 0 clamp(10px,calc(2vh * var(--cov-g)),22px);
+  }
+  .cover .cover-enter{grid-area:3/2/4/3;justify-self:start}
+  .cover-bar{
+    grid-area:4/2/5/3;width:min(340px,44vw);
+    margin-top:clamp(10px,calc(2vh * var(--cov-g)),20px);
+  }
+  .cover-note{grid-area:5/2/6/3;margin-top:clamp(8px,calc(1.6vh * var(--cov-g)),16px)}
+  .cover-meta{grid-area:6/2/7/3}
+}
+/* very short screens: drop the two smallest lines rather than overflow */
+@media (max-height:430px) and (orientation:landscape){
+  .cover-meta{display:none}
+  .cover-plate{grid-area:1/1/6/2}
+}
+@media (max-height:360px) and (orientation:landscape){
+  .cover-note{display:none}
+  .cover-plate{grid-area:1/1/5/2}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .cover-plate,.cover h1,.cover-tag,.cover .cover-enter,
+  .cover-bar,.cover-note,.cover-meta{animation:none}
+}
