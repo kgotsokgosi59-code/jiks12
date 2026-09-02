@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/components.css">
 <link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/music.css">
+<link rel="stylesheet" href="assets/css/licence.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -163,6 +165,89 @@
   </div>
 </section>
 
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">Sounds like home</p>
+    <h2 class="rv">What the studio sounds like</h2>
+    <p class="lede rv">Amapiano is the soundtrack of everything we build. This is the
+      Kabza De Small playlist running through the office &mdash; press play below for the
+      site's own background music.</p>
+    <div class="sp-embed rv">
+      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0DVHNd?theme=0"
+              width="100%" height="352" loading="lazy"
+              title="This Is Kabza De Small — playlist on Spotify"></iframe>
+    </div>
+    <p style="margin-top:14px;color:var(--bone-dim);font-size:13px">Playback needs an
+      internet connection. The background player at the bottom of the page plays our own
+      licensed files &mdash; see <code>assets/js/playlist.js</code>. Credits and licensing
+      for everything you hear on this site:
+      <a href="assets/audio/LICENSE.md">audio licence &amp; credits</a>.</p>
+    
+<section class="licence" id="music-licence" data-licence>
+  <h3 class="sr">Music credits and licensing</h3>
+  <button class="licence-toggle" type="button" data-licence-toggle aria-expanded="true" aria-controls="licence-panel">
+    <span>Music credits &amp; licensing</span><span class="chev" aria-hidden="true"></span>
+  </button>
+  <div class="licence-panel" id="licence-panel" data-licence-panel>
+    <p class="licence-note" data-licence-note>Nothing plays here until its licence is cleared.</p>
+    <div data-licence-body>
+      <table class="lic-table">
+        <caption>Background music &mdash; licence record</caption>
+        <thead><tr><th scope="col">Track</th><th scope="col">Credit</th><th scope="col">Licensed from</th><th scope="col">Licence</th><th scope="col">Status</th><th scope="col">Territory &amp; term</th></tr></thead>
+        <tbody>
+      <tr>
+        <td class="t-title">Abalele</td><td class="t-artist">&mdash;</td>
+        <td class="t-owner">&mdash;</td><td class="t-owner">&mdash;</td>
+        <td><span class="badge pending">Pending</span></td><td class="t-term">&mdash;</td>
+      </tr>
+      <tr>
+        <td class="t-title">Asibe Happy</td><td class="t-artist">&mdash;</td>
+        <td class="t-owner">&mdash;</td><td class="t-owner">&mdash;</td>
+        <td><span class="badge pending">Pending</span></td><td class="t-term">&mdash;</td>
+      </tr>
+      <tr>
+        <td class="t-title">iMitha</td><td class="t-artist">&mdash;</td>
+        <td class="t-owner">&mdash;</td><td class="t-owner">&mdash;</td>
+        <td><span class="badge pending">Pending</span></td><td class="t-term">&mdash;</td>
+      </tr>
+      <tr>
+        <td class="t-title">Khusela</td><td class="t-artist">&mdash;</td>
+        <td class="t-owner">&mdash;</td><td class="t-owner">&mdash;</td>
+        <td><span class="badge pending">Pending</span></td><td class="t-term">&mdash;</td>
+      </tr>
+      <tr>
+        <td class="t-title">Sponono</td><td class="t-artist">&mdash;</td>
+        <td class="t-owner">&mdash;</td><td class="t-owner">&mdash;</td>
+        <td><span class="badge pending">Pending</span></td><td class="t-term">&mdash;</td>
+      </tr>
+      <tr>
+        <td class="t-title">Umshove</td><td class="t-artist">&mdash;</td>
+        <td class="t-owner">&mdash;</td><td class="t-owner">&mdash;</td>
+        <td><span class="badge pending">Pending</span></td><td class="t-term">&mdash;</td>
+      </tr>
+      <tr>
+        <td class="t-title">Lorch</td><td class="t-artist">&mdash;</td>
+        <td class="t-owner">&mdash;</td><td class="t-owner">&mdash;</td>
+        <td><span class="badge pending">Pending</span></td><td class="t-term">&mdash;</td>
+      </tr>
+      <tr>
+        <td class="t-title">Bab' Motha</td><td class="t-artist">&mdash;</td>
+        <td class="t-owner">&mdash;</td><td class="t-owner">&mdash;</td>
+        <td><span class="badge pending">Pending</span></td><td class="t-term">&mdash;</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lic-foot">The player itself refuses to play a track that is not marked
+      <b>Cleared</b>, so this page cannot drift away from the licences we hold.
+      Full terms: <a href="assets/audio/LICENSE.md">audio licence &amp; credits</a>.
+      Rights and takedown: <a href="/cdn-cgi/l/email-protection#c4afa3abb0b7abafa3abb7adf1fd84a3a9a5ada8eaa7aba9"><span class="__cf_email__" data-cfemail="abc0ccc4dfd8c4c0ccc4d8c29e92ebccc6cac2c785c8c4c6">[email&#160;protected]</span></a>.
+      <span data-licence-reviewed></span></p>
+  </div>
+</section>
+  </div>
+</section>
+
 <div class="cta-band">
   <h2>Work with us</h2>
   <p>Projects, stages, campaigns or a build that needs covering &mdash; start the conversation.</p>
@@ -186,7 +271,7 @@
         <img class="f-logo" src="assets/img/logo.png" alt="Jiks Academy">
         <p style="color:var(--bone-dim);max-width:36ch;font-size:15px">A creative house for the culture coming out of the East Rand. Home of East Rand Academy and Daveyton Stance Society.</p>
         <ul style="margin-top:18px">
-          <li><a href="mailto:kgotsokgosi59@gmail.com">kgotsokgosi59@gmail.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#0368646c77706c68646c706a363a43646e626a6f2d606c6e"><span class="__cf_email__" data-cfemail="a3c8c4ccd7d0ccc8c4ccd0ca969ae3c4cec2cacf8dc0ccce">[email&#160;protected]</span></a></li>
           <li><a href="tel:+27677024063">+27 67 702 4063</a></li>
         </ul>
       </div>
@@ -203,7 +288,7 @@
         <ul>
           <li><a href="shadrack-makamu.html">Shadrack Makamu</a></li>
           <li><a href="kgotso-matlakala.html">Kgotso Matlakala</a></li>
-          <li><a href="skhubuzo.html">Skhubuzo</a></li>
+          <li><a href="skhumbuzo.html">Skhumbuzo</a></li>
         </ul>
       </div>
       <div>
@@ -214,6 +299,7 @@
           <li><a href="clients.html">Clients &amp; pipeline</a></li>
           <li><a href="hector.html">Hector &mdash; MC &amp; Speaker</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#music-licence">Music credits</a></li>
         </ul>
       </div>
     </div>
@@ -236,7 +322,7 @@
       <ol class="f-all-row">
       <li><a href="shadrack-makamu.html">Shadrack Makamu</a></li>
       <li><a href="kgotso-matlakala.html">Kgotso Matlakala</a></li>
-      <li><a href="skhubuzo.html">Skhubuzo</a></li>
+      <li><a href="skhumbuzo.html">Skhumbuzo</a></li>
       </ol>
     </nav>
     <div class="f-big">Let's build<span>.</span></div>
@@ -244,12 +330,35 @@
       <span>&copy; <span data-year>2026</span> Jiks Academy</span>
       <span>Daveyton &middot; East Rand &middot; Gauteng</span>
       <span>Ground up, not top down</span>
+      <span><a href="assets/audio/LICENSE.md">Audio licence &amp; credits</a></span>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/nav.js"></script>
+<div class="musicbar" data-music hidden>
+  <audio preload="none"></audio>
+  <button class="mb-toggle" type="button" data-mb-toggle aria-pressed="false" aria-label="Play background music">
+    <span class="mb-icon" aria-hidden="true">&#9654;</span><span class="mb-label">Play</span>
+  </button>
+  <span class="mb-eq" aria-hidden="true"><i></i><i></i><i></i></span>
+  <div class="mb-now">
+    <span class="mb-k">Now playing</span>
+    <span class="mb-title" data-mb-title>&mdash;</span>
+  </div>
+  <div class="mb-ctrls">
+    <button type="button" data-mb-prev aria-label="Previous track"><span aria-hidden="true">&#9198;</span></button>
+    <button type="button" data-mb-next aria-label="Next track"><span aria-hidden="true">&#9197;</span></button>
+  </div>
+  <p class="mb-credit">Licensed tracks only &middot;
+    <a href="about.html#music-licence">Credits</a></p>
+  <p class="mb-status" role="status" aria-live="polite" data-mb-status></p>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/nav.js"></script>
 <script src="assets/js/menu.js"></script>
 <script src="assets/js/reveal.js"></script>
-</body>
+<script src="assets/js/playlist.js"></script>
+<script src="assets/js/music.js"></script>
+<script src="assets/js/licence.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a34b375a9f1773a9',t:'MTc4ODMzODQ5Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
