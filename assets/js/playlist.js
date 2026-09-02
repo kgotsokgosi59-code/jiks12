@@ -8,12 +8,44 @@
    to: buy the tracks, use a licensed library, or link the official streaming
    playlist instead (see the Spotify embed on the About page). */
 window.JIKS_PLAYLIST = [
-  { title: "Abalele",     artist: "Kabza De Small & DJ Maphorisa ft. Ami Faku", file: "assets/audio/music/abalele.mp3" },
-  { title: "Asibe Happy", artist: "Kabza De Small, DJ Maphorisa & Ami Faku",    file: "assets/audio/music/asibe-happy.mp3" },
-  { title: "iMitha",      artist: "Kabza De Small & DJ Maphorisa ft. Nokwazi",  file: "assets/audio/music/imitha.mp3" },
-  { title: "Khusela",     artist: "Kabza De Small & DJ Maphorisa ft. Msaki",    file: "assets/audio/music/khusela.mp3" },
-  { title: "Sponono",     artist: "Kabza De Small & DJ Maphorisa",              file: "assets/audio/music/sponono.mp3" },
-  { title: "Umshove",     artist: "Kabza De Small",                             file: "assets/audio/music/umshove.mp3" },
-  { title: "Lorch",       artist: "Kabza De Small & DJ Maphorisa",              file: "assets/audio/music/lorch.mp3" },
-  { title: "Bab' Motha",  artist: "Kabza De Small",                             file: "assets/audio/music/bab-motha.mp3" }
+  {
+    title: "Abalele",
+    artist: "Kabza De Small & DJ Maphorisa ft. Ami Faku",
+    file: "assets/audio/music/abalele.mp3",
+  },
+  {
+    title: "Asibe Happy",
+    artist: "Kabza De Small, DJ Maphorisa & Ami Faku",
+    file: "assets/audio/music/asibe-happy.mp3",
+  },
+  {
+    title: "iMitha",
+    artist: "Kabza De Small & DJ Maphorisa ft. Nokwazi",
+    file: "assets/audio/music/imitha.mp3",
+  },
+  {
+    title: "Khusela",
+    artist: "Kabza De Small & DJ Maphorisa ft. Msaki",
+    file: "assets/audio/music/khusela.mp3",
+  },
+  {
+    title: "Sponono",
+    artist: "Kabza De Small & DJ Maphorisa",
+    file: "assets/audio/music/sponono.mp3",
+  },
+  {
+    title: "Umshove",
+    artist: "Kabza De Small",
+    file: "assets/audio/music/umshove.mp3",
+  },
+  {
+    title: "Lorch",
+    artist: "Kabza De Small & DJ Maphorisa",
+    file: "assets/audio/music/lorch.mp3",
+  },
+  {
+    title: "Bab' Motha",
+    artist: "Kabza De Small",
+    file: "assets/audio/music/bab-motha.mp3",
+  },
 ];
