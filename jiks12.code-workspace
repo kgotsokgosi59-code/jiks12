@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "jiks12",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "assets"
+	}
+}
